@@ -10,7 +10,7 @@ from flask import abort, Flask, redirect, render_template, request, session, url
 from markdown import markdown
 import redis
  
-
+import dropbox
  
 # App key and secret from the App console (dropbox.com/developers/apps)
 APP_KEY = os.environ['APP_KEY']
@@ -70,7 +70,7 @@ def process_user(account):
     # cursor for the user (None the first time)
     cursor = redis_client.hget('cursors', account)
 
-    dbx = Dropbox(token)
+    dbx = dropbox.Dropbox(token)
     has_more = True
 
     while has_more:
