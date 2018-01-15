@@ -1,5 +1,5 @@
-dropbox
-Flask
-gunicorn
-Markdown
-redis
+dropbox=
+Flask==0.10.1
+gunicorn==18.0
+Markdown==2.4
+redis==2.9.1
