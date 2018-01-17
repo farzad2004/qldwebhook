@@ -12,6 +12,9 @@
     "APP_KEY": {
       "description": "Your Dropbox app key (found at dropbox.com/developers/apps)"
     },
+    "TOKEN": {
+      "description": "Your Dropbox generated token(found at dropbox.com/developers/apps)"
+    },
     "APP_SECRET": {
       "description": "Your Dropbox app secret (found at dropbox.com/developers/apps)"
     },
