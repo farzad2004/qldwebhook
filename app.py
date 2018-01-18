@@ -153,13 +153,6 @@ def done():
 	return render_template('done.html')
 
 
-def validate_request():
-	'''Validate that the request is properly signed by Dropbox.
-       (If not, this is a spoofed webhook.)'''
-
-	signature = request.headers.get('X-Dropbox-Signature')
-	return signature == hmac.new(APP_SECRET, request.data, sha256).hexdigest()
-
 
 @app.route('/webhook', methods=['GET'])
 def verify():
