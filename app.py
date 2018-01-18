@@ -199,5 +199,4 @@ def webhook():
 
 
 if __name__ == '__main__':
-	app.debug = True
-	app.run(host='192.168.3.211', port=5000)
+	app.run(debug=True)
