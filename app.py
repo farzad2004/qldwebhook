@@ -12,29 +12,29 @@ from markdown import markdown
 import redis
 import dropbox
 
-redis_url = 'redis://redistogo:5e34518f7bf5e5dbeddec2493ad5c4a9@crestfish.redistogo.com:10389/'
-redis_client = redis.from_url(redis_url)
-
-# App key and secret from the App console (dropbox.com/developers/apps)
-APP_KEY = 'j1igeqc84wrwme9'
-APP_SECRET = '839lax098icbq6l'
-
-# redis_url = os.environ['REDISTOGO_URL']
+# redis_url = 'redis://redistogo:5e34518f7bf5e5dbeddec2493ad5c4a9@crestfish.redistogo.com:10389/'
 # redis_client = redis.from_url(redis_url)
 #
 # # App key and secret from the App console (dropbox.com/developers/apps)
-# APP_KEY = os.environ['APP_KEY']
-# APP_SECRET = os.environ['APP_SECRET']
+# APP_KEY = 'j1igeqc84wrwme9'
+# APP_SECRET = '839lax098icbq6l'
+
+redis_url = os.environ['REDISTOGO_URL']
+redis_client = redis.from_url(redis_url)
+
+# App key and secret from the App console (dropbox.com/developers/apps)
+APP_KEY = os.environ['APP_KEY']
+APP_SECRET = os.environ['APP_SECRET']
 
 
 app = Flask(__name__)
 app.debug = True
 
 # A random secret used by Flask to encrypt session data cookies
-app.secret_key = 'a8c0a7117e071d5d50cda63b51405ed5eaefd78477a5d4fd553142ecc14333b2'
+# app.secret_key = 'a8c0a7117e071d5d50cda63b51405ed5eaefd78477a5d4fd553142ecc14333b2'
 
 
-# app.secret_key = os.environ['FLASK_SECRET_KEY']
+app.secret_key = os.environ['FLASK_SECRET_KEY']
 
 def get_url(route):
 	'''Generate a proper URL, forcing HTTPS if not running locally'''
