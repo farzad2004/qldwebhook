@@ -200,4 +200,4 @@ def webhook():
 
 if __name__ == '__main__':
 	app.debug = True
-	app.run(host='192.168.3.211', port=5000, ssl_context='adhoc')
+	app.run(host='192.168.3.211', port=5000)
